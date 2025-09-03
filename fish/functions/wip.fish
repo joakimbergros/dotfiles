@@ -1,3 +1,3 @@
-function wip --wraps='git add . && git commit -m "WIP"' --wraps='git add . && git commit -m "wip"' --description 'alias wip git add . && git commit -m "wip"'
+function wip --wraps='git add . && git commit -m \$argv' --description 'alias wip git add . && git commit -m \$argv'
     git add . && git commit -m $argv
 end

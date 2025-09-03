@@ -1,3 +1,3 @@
-function wipp --wraps='git add . && git commit -m "wip" && git push' --description 'alias wipp git add . && git commit -m "wip" && git push'
+function wipp --wraps='wip \$argv && git push' --description 'wip \$argv && git push'
     wip $argv && git push
 end
