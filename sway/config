@@ -69,6 +69,8 @@ input * {
 gaps inner 5
 gaps outer 0
 
+default_border none
+
 ### Key bindings
 #
 # Basics:
