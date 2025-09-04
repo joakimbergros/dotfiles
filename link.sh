@@ -6,6 +6,8 @@ DRY_RUN=false
 
 usage() {
     cat <<EOF
+This command links all adjacent directories to "$HOME\.config".
+
 Usage: $0 [-d] [-f] [-h]
 Options:
   -d    Dry-run (show actions but do not execute them)
