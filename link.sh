@@ -4,15 +4,23 @@ set -euo pipefail
 FORCE=false
 DRY_RUN=false
 
-# parse args
-for arg in "$@"; do
-    case "$arg" in
-        -f) FORCE=true ;;
-        --dry-run) DRY_RUN=true ;;
-        *)
-            echo "Usage: $0 [-f] [--dry-run]"
-            exit 1
-            ;;
+usage() {
+    cat <<EOF
+Usage: $0 [-d] [-f] [-h]
+Options:
+  -d    Dry-run (show actions but do not execute them)
+  -f    Force replace existing link entry
+  -h    Show this help message and exit
+EOF
+}
+
+# Parse options
+while getopts ":hdf" opt; do
+    case $opt in
+        d) DRY_RUN=true ;;
+        f) FORCE=true ;;
+        h) usage; exit 0 ;;
+        \?) echo "Invalid option: -$OPTARG" >&2; exit 1 ;;
     esac
 done
 
